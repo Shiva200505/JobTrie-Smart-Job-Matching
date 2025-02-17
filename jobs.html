@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings with Filters</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jobSearch.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Job Matcher</h1>
+            <div class="search-bar">
+                <input type="text" id="searchBar" placeholder="Search for jobs, people, or companies...">
+                <button onclick="searchJobs()">Search</button>
+            </div>
+            <div class="profile-options">
+                <span><a href="index.html">Home</a></span>
+                <span><a href="network.html">Network</a></span>
+                <span><a href="jobs.html">Jobs</a></span>
+                <span><a href="profile.html">Profile</a></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <div class="profile-summary">
+                <img src="it.jpg" alt="Profile Picture" class="profile-pic">
+                <h3>Shivam Sawant</h3>
+                <p>Video Editor | Graphic Designer</p>
+            </div>
+            <div class="sidebar-menu">
+                <ul>
+                    <li><a href="network.html">Network</a></li>
+                    <li><a href="jobs.html">Jobs</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <section class="feed">
+            <h2>Job Listings</h2>
+
+            <!-- Filter Options -->
+            <div class="filter-options">
+                <label for="locationFilter">Location:</label>
+                <select id="locationFilter">
+                    <option value="all">All</option>
+                    <option value="New York">New York</option>
+                    <option value="San Francisco">San Francisco</option>
+                    <option value="Chicago">Chicago</option>
+                    <option value="Austin">Austin</option>
+                </select>
+
+                <label for="salaryFilter">Salary Range:</label>
+                <select id="salaryFilter">
+                    <option value="all">All</option>
+                    <option value="50000">Above $50,000</option>
+                    <option value="75000">Above $75,000</option>
+                    <option value="100000">Above $100,000</option>
+                </select>
+
+                <button onclick="filterJobs()">Filter</button>
+            </div>
+
+            <ul id="jobResults">
+                <!-- Job results will be inserted here with titles, company, salary, location, and description -->
+            </ul>
+        </section>
+
+    </div>
+</body>
+</html>
